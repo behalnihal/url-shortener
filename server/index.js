@@ -2,8 +2,10 @@ import express from "express";
 import urlRoute from "./routes/urlRoute.js";
 import connectDB from "./connectDB.js";
 import Url from "./models/url.js";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const PORT = 8000;
 
 connectDB("mongodb://localhost:27017/urlShortener").then(() => {
